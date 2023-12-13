@@ -1,1 +1,1 @@
-# calender-app
+# snake-game
