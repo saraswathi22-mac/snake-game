@@ -54,6 +54,11 @@ body,
   justify-content: space-between;
 }
 
+.scores {
+  display: flex;
+  justify-content: space-between;
+}
+
 #score {
   color: #abb78a;
 }
