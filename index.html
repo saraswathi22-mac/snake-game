@@ -3,32 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Game font -->
     <link
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
+
     <title>Snake Game</title>
+
+    <!-- External styles and scripts -->
     <link rel="stylesheet" href="./style.css" />
     <script src="script.js" defer></script>
-    <!-- defer- helps us to run this at the last after setting up html and css -->
   </head>
   <body>
-    <div>
-      <div class="scores">
+    <main>
+      <section class="scores">
         <h1 id="score">000</h1>
         <h1 id="highScore">000</h1>
-      </div>
-      <div class="game-border-1">
-        <div class="game-border-2">
-          <div class="game-border-3">
-            <div id="game-board"></div>
+      </section>
+
+      <section class="game-container">
+        <div class="game-border-1">
+          <div class="game-border-2">
+            <div class="game-border-3">
+              <div id="game-board"></div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <h1 id="instruction-text">Press spacebar to start the game</h1>
-    <img id="logo" src="snake-game-ai-gen.png" alt="snake-logo" />
+      </section>
+    </main>
+    <p id="instruction-text">Press spacebar to start the game</p>
+    <img id="logo" src="snake-logo.png" alt="Snake Logo" />
   </body>
 </html>
