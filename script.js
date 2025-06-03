@@ -15,6 +15,11 @@ let gameInterval;
 let gameSpeedDelay = 200;
 let gameStarted = false;
 
+// Clamp function: restricts a value between min and max
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
 // Draw game map, snake, food
 function draw() {
   board.innerHTML = "";
@@ -59,11 +64,11 @@ function drawFood() {
 
 // Generate food
 function generateFood() {
-  const x = Math.floor(Math.random() * gridSize) + 1;
-  const y = Math.floor(Math.random() * gridSize) + 1;
+  const x = clamp(Math.floor(Math.random() * gridSize) + 1, 1, gridSize);
+  const y = clamp(Math.floor(Math.random() * gridSize) + 1, 1, gridSize);
   return { x, y };
 }
-
+  
 // Moving the snake
 function move() {
   const head = { ...snake[0] };
