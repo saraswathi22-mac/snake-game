@@ -112,26 +112,35 @@ function startGame() {
 
 // Keypress event listener
 function handleKeyPress(event) {
-  if (
-    (!gameStarted && event.code === "Space") ||
-    (!gameStarted && event.key === " ")
-  ) {
-    startGame();
-  } else {
+  const newDirection = (() => {
     switch (event.key) {
       case "ArrowUp":
-        direction = "up";
-        break;
+        return "up";
       case "ArrowDown":
-        direction = "down";
-        break;
+        return "down";
       case "ArrowLeft":
-        direction = "left";
-        break;
+        return "left";
       case "ArrowRight":
-        direction = "right";
-        break;
+        return "right";
+      default:
+        return direction;
     }
+  })();
+
+  const opposites = {
+    up: "down",
+    down: "up",
+    left: "right",
+    right: "left",
+  };
+
+  if (
+    (!gameStarted && (event.code === "Space" || event.key === " ")) ||
+    (!gameStarted && newDirection !== direction)
+  ) {
+    startGame();
+  } else if (newDirection !== opposites[direction]) {
+    direction = newDirection;
   }
 }
 
