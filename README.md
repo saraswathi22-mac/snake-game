@@ -8,4 +8,3 @@ A classic Snake game built using HTML, CSS, and JavaScript. Play it in your brow
 - Increasing speed as the snake eats
 - Game over on wall/self collision
 - Score tracking and high score display
-- Minimal, responsive UI
